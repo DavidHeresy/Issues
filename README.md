@@ -8,9 +8,7 @@ Run `source workspace` to enter the development environment.
 
 ## TODOs
 
-- TODO: Ignore `todo.sh` by default.
 - TODO: Add README section how to add todo.sh as post-commit hook.
 - TODO: Add support for `NOTE`, `XXX`, `HACK`, `FIXME`, `BUG` tags.
-- TODO: Add support for `.todoignore` file.
 - TODO: Add support for `.todorc` file with custom search patterns.
 
