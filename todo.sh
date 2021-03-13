@@ -13,6 +13,12 @@ echo ""
 # Loop over all files tracked in the repository.
 for file in $(git ls-files)
 do
+    # Skip the current file, if it is contained in the .todoignore.
+    if [[ ! -z $(grep "$file" "$ROOT/.todoignore") ]]
+    then
+        continue
+    fi
+
     # Save all TODOs of the current file in todo.tmp.
     git grep -n "TODO: " $ROOT/$file > "$ROOT/todo.tmp"
     
