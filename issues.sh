@@ -9,6 +9,7 @@ LABELS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA'
 HEADING="Issues"
 OUTFILE="Issues.md"
 TMPFILE="issues.tmp"
+TMPIGNOREFILE=".issuesignore.tmp"
 
 # Get the root path of the repository.
 ROOT=$(git rev-parse --show-toplevel)
@@ -21,18 +22,16 @@ ESCAPED_LABELS=$(echo "$LABELS" | sed 's/|/\\|/g')
 SOURCE_PATTERN='\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_LABELS"'\): \(.*\)'
 REPLACE_PATTERN='- [ ] [\3#L\2](\1#L\2): \4'
 
+# Remove comments from the .issueignore file and save it in a tmp file. 
+grep "^[^#]" "$ROOT/.issuesignore" > "$ROOT/$TMPIGNOREFILE"
+
 # Write the heading.
 echo '# '"$HEADING"
 echo ""
 
-# Loop over all files tracked in the repository.
-for file in $(git ls-files); do
-    # Skip the current file, if it is listed to be ignored.
-    # TODO: Add regex formatting with `$<file>^`.
-    if [[ ! -z $(git grep "$file" -- "$ROOT/.issuesignore") ]]; then
-        continue
-    fi
-
+# Loop over all files tracked in the repository that are not ignored.
+for file in $(git ls-files | grep -v -E -f "$ROOT/$TMPIGNOREFILE")
+do
     # Extract all lines of the current file, that have one of the defined issue labels.
     # IDEA: Add support for `--ignore-issue` comments for lines to ignore.
     git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
@@ -53,6 +52,6 @@ for file in $(git ls-files); do
     echo ""
 done
 
-# Clean-up the tmp file.
-rm -f "$ROOT/$TMPFILE"
+# Clean-up the tmp files.
+rm -f "$ROOT/$TMPFILE" "$ROOT/$TMPIGNOREFILE"
 
