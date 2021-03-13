@@ -4,7 +4,12 @@
 
 ## Usage
 
-Copy the script [`issues.sh`](issues.sh) to your git repository.
+Copy the script [`issues.sh`](issues.sh) to your git repository, for example via:
+
+```bash
+wget https://raw.githubusercontent.com/DavidHeresy/git-issues/main/issues.sh
+```
+
 Generate the [Issues.md](Issues.md) file with:
 
 ```bash
