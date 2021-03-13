@@ -22,21 +22,17 @@ echo '# '"$HEADING"
 echo ""
 
 # Loop over all files tracked in the repository.
-for file in $(git ls-files)
-do
+for file in $(git ls-files); do
     # Skip the current file, if it is listed to be ignored.
-    if [[ ! -z $(git grep "$file" -- "$ROOT/.issuesignore") ]]
-    then
+    if [[ ! -z $(git grep "$file" -- "$ROOT/.issuesignore") ]]; then
         continue
     fi
 
-    # Extract all lines of the current file, that have one of the defined
-    # issue labels.
+    # Extract all lines of the current file, that have one of the defined issue labels.
     git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
 
     # Continue with the next file, if no lines where extracted.
-    if [[ ! -s "$ROOT/$TMPFILE" ]]
-    then
+    if [[ ! -s "$ROOT/$TMPFILE" ]]; then
         continue
     fi
     
