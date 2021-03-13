@@ -8,10 +8,11 @@
 
 ## [README.md](README.md)
 
-- [ ] [TODO#L20](README.md#L20): Setup a Git Hook
-- [ ] [TODO#L28](README.md#L28): Test `issues.sh` as a system-wide script / program.
-- [ ] [TODO#L29](README.md#L29): Test `issues.sh` with big public projects.
-- [ ] [FEATURE#L30](README.md#L30): Make `issues.sh` work for projects, that aren't a git repository.
+- [ ] [TODO#L25](README.md#L25): Setup a Git Hook
+- [ ] [TODO#L33](README.md#L33): Generate `Issues.md` with a GitHub Job.
+- [ ] [TODO#L34](README.md#L34): Test `issues.sh` as a system-wide script / program.
+- [ ] [TODO#L35](README.md#L35): Test `issues.sh` with big public projects.
+- [ ] [FEATURE#L36](README.md#L36): Make `issues.sh` work for projects, that aren't a git repository.
 
 ## [issues.sh](issues.sh)
 
