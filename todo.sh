@@ -6,6 +6,10 @@ ROOT=$(git rev-parse --show-toplevel)
 # Redirect stdout to TODO.md.
 exec 1>"$ROOT/TODO.md"
 
+# Define the TODO comment pattern and Markdown replace string for sed.
+PATTERN='\([^:]*\):\([0-9]*\):.*TODO: \(.*\)'
+REPLACE='- [ ] [L#\2](\1#L\2): \3'
+
 # Write the heading.
 echo "# TODO"
 echo ""
@@ -32,8 +36,7 @@ do
 
         # Transform the TODOs from todo.tmp into a list with a checkboxes
         # and links to the linenumber in the original code file. 
-        cat "$ROOT/todo.tmp" \
-            | sed 's/\([^:]*\):\([0-9]*\):.*TODO: \(.*\)/- [ ] [L#\2](\1#L\2): \3/'
+        cat "$ROOT/todo.tmp" | sed 's/'"$PATTERN"'/'"$REPLACE"'/'
         
         # Write a newline as a spacer for the next section.
         echo ""
