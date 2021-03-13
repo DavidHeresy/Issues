@@ -34,8 +34,7 @@ do
         echo "## [$file]($file)"
         echo ""
 
-        # Transform the TODOs from todo.tmp into a list with a checkboxes
-        # and links to the linenumber in the original code file. 
+        # Transform the TODOs from todo.tmp into the Markdown list.
         cat "$ROOT/todo.tmp" | sed 's/'"$PATTERN"'/'"$REPLACE"'/'
         
         # Write a newline as a spacer for the next section.
