@@ -23,9 +23,10 @@ Run `source workspace` to enter the development environment.
 
 ## TODOs
 
-- TODO: Use strict mode and default system shell.
-- TODO: Add README section how to add todo.sh as post-commit hook.
-- FEATURE: Add support for `<file>#L<linenumber>` entries in `.todoignore`.
-- FEATURE: Add support for `NOTE`, `XXX`, `HACK`, `FIXME`, `BUG` tags.
-- FEATURE: Add support for `.todorc` file with custom search patterns.
+- TODO: Use strict mode.
+- TODO: Add README section how to use `status-report.sh` as a git hook.
+- FETURRE: Add support for `--srignore` comments for lines to ignore.
+- FEATURE: Add support for `.srconfig` file with custom config variables.
+- FEATURE: Make `sr` work for projects, that aren't a git repository.
+- FEATURE: Make `sr` work as a system-wide script / program.
 
