@@ -1,4 +1,4 @@
 #!/bin/sh
 
-alias sr="bash status-report.sh"
+alias issues="bash issues.sh"
 
