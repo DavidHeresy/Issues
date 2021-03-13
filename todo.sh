@@ -8,7 +8,7 @@ exec 1>"$ROOT/TODO.md"
 
 # Write the heading.
 echo "# TODO"
-echo "" 
+echo ""
 
 # Loop over all files tracked in the repository.
 for file in $(git ls-files)
