@@ -33,7 +33,7 @@ do
         # Transform the TODOs from todo.tmp into a list with a checkboxes
         # and links to the linenumber in the original code file. 
         cat "$ROOT/todo.tmp" \
-            | sed 's/\([^:]*\):\([0-9]*\):.*TODO: \(.*\)/- [ ] [\3](\1#L\2)/'
+            | sed 's/\([^:]*\):\([0-9]*\):.*TODO: \(.*\)/- [ ] [L#\2](\1#L\2): \3/'
         
         # Write a newline as a spacer for the next section.
         echo ""
