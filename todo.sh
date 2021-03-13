@@ -14,7 +14,7 @@ echo ""
 for file in $(git ls-files)
 do
     # Skip the current file, if it is contained in the .todoignore.
-    if [[ ! -z $(grep "$file" "$ROOT/.todoignore") ]]
+    if [[ ! -z $(git grep "$file" "$ROOT/.todoignore") ]]
     then
         continue
     fi
