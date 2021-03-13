@@ -4,7 +4,7 @@
 # TODO: Use bash strict mode.
 
 # Define config variables.
-# FEATURE: Add support for `.issuesrc` config file.
+# IDEA: Add support for `.issuesrc` config file.
 LABELS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA'
 HEADING="Issues"
 OUTFILE="Issues.md"
@@ -18,6 +18,7 @@ ROOT=$(git rev-parse --show-toplevel)
 exec 1>"$ROOT/$OUTFILE"
 
 # Define the regex source and replace patterns.
+# IDEA: Add support for `--ignore-issue` comments for lines to ignore.
 ESCAPED_LABELS=$(echo "$LABELS" | sed 's/|/\\|/g')
 SOURCE_PATTERN='\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_LABELS"'\): \(.*\)'
 REPLACE_PATTERN='- [ ] [\3#L\2](\1#L\2): \4'
@@ -33,7 +34,6 @@ echo ""
 for file in $(git ls-files | grep -v -E -f "$ROOT/$TMPIGNOREFILE")
 do
     # Extract all lines of the current file, that have one of the defined issue labels.
-    # IDEA: Add support for `--ignore-issue` comments for lines to ignore.
     git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
 
     # Continue with the next file, if no lines where extracted.
