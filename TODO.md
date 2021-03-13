@@ -8,8 +8,3 @@
 - [ ] [Add support for `.todoignore` file.](README.md#L14)
 - [ ] [Add support for `.todorc` file with custom search patterns.](README.md#L15)
 
-## [todo.sh](todo.sh)
-
-- [ ] [" $ROOT/$file > "$ROOT/todo.tmp"](todo.sh#L17)
-- [ ] [\(.*\)/- [ ] [\3](\1#L\2)/'](todo.sh#L30)
-
