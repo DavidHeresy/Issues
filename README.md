@@ -21,7 +21,7 @@ alias sr="bash status-report.sh"
 
 Run `source workspace` to enter the development environment.
 
-## TODOs
+## Roadmap
 
 - TODO: Use strict mode.
 - TODO: Add README section how to use `status-report.sh` as a git hook.
