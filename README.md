@@ -1,6 +1,6 @@
 # TODO.md
 
-*Track TODO comments of any Git repository in a TODO.md file.*
+*Track TODO comments of any git repository in a TODO.md file.*
 
 ## Development
 
