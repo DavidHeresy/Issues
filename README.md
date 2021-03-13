@@ -17,7 +17,7 @@ You can also set an alias like:
 alias issues="bash issues.sh"
 ```
 
-## Development Environment
+## Development
 
 Run `source workspace` to enter the development environment.
 
