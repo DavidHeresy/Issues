@@ -1,6 +1,6 @@
 # Git Issues
 
-*Collect all your issue comments (e.g. TODO, FIXME, ...) in one file.*
+*Collect all issue comments (e.g. `TODO`, `FIXME`, ...) in one file.*
 
 ## Usage
 
