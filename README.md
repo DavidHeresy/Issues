@@ -1,6 +1,6 @@
-# Issues
+# Git Issues
 
-*Collect issue comments in one file.*
+*Collect all your issue comments (e.g. TODO: ...) in one file.*
 
 ## Usage
 
@@ -17,7 +17,7 @@ You can also set an alias like:
 alias issues="bash issues.sh"
 ```
 
-## Development
+## Development Environment
 
 Run `source workspace` to enter the development environment.
 
