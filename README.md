@@ -1,14 +1,20 @@
-# TODO.md
+# Status Report
 
-*Track TODO comments of any git repository in a TODO.md file.*
+*Generate a status report from your "TODO:" comments.*
 
 ## Usage
 
-Copy the script [`todo.sh`](todo.sh) to your git repository.
-Generate the [TODO.md](TODO.md) file with:
+Copy the script [`status-report.sh`](status-report.sh) to your
+git repository. Generate the [StatusReport.md](StatusReport.md) file with:
 
 ```bash
-bash todo.sh
+bash status-report.sh
+```
+
+You can also set an alias like:
+
+```bash
+alias sr="bash status-report.sh"
 ```
 
 ## Development

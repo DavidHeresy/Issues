@@ -1,4 +1,4 @@
 #!/bin/sh
 
-alias todo="bash todo.sh"
+alias sr="bash status-report.sh"
 

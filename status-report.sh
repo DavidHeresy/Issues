@@ -4,7 +4,7 @@
 ROOT=$(git rev-parse --show-toplevel)
 
 # Redirect stdout to TODO.md.
-exec 1>"$ROOT/TODO.md"
+exec 1>"$ROOT/StatusReport.md"
 
 # Define the TODO comment pattern and Markdown replace string for sed.
 PATTERN='\([^:]*\):\([0-9]*\):.*TODO: \(.*\)'
@@ -18,13 +18,13 @@ echo ""
 for file in $(git ls-files)
 do
     # Skip the current file, if it is contained in the .todoignore.
-    if [[ ! -z $(git grep "$file" "$ROOT/.todoignore") ]]
+    if [[ ! -z $(git grep "$file" "$ROOT/.srignore") ]]
     then
         continue
     fi
 
     # Save all TODOs of the current file in todo.tmp.
-    git grep -n "TODO: " $ROOT/$file > "$ROOT/todo.tmp"
+    git grep -n "TODO: " -- $ROOT/$file > "$ROOT/todo.tmp"
     
     # Check if there were any TODOs.
     if [[ -s "$ROOT/todo.tmp" ]]
