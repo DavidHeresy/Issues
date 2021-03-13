@@ -1,46 +1,55 @@
 #!/bin/bash
 
+# Define config variables.
+REPORT="StatusReport.md"
+TAGS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA'
+HEADING="Status Report"
+TMP_FILE="StatusReport.tmp"
+
 # Get the root path of the repository.
 ROOT=$(git rev-parse --show-toplevel)
 
-# Redirect stdout to TODO.md.
-exec 1>"$ROOT/StatusReport.md"
+# Redirect stdout to the report file.
+exec 1>"$ROOT/$REPORT"
 
-# Define the TODO comment pattern and Markdown replace string for sed.
-PATTERN='\([^:]*\):\([0-9]*\):.*TODO: \(.*\)'
-REPLACE='- [ ] [L#\2](\1#L\2): \3'
+# Define the supported tags, search pattern and Markdown replace string.
+ESCAPED_TAGS=$(echo "$TAGS" | sed 's/|/\\|/g')
+SOURCE_PATTERN='\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_TAGS"'\): \(.*\)'
+TARGET_PATTERN='- [ ] [\3#L\2](\1#L\2): \4'
 
 # Write the heading.
-echo "# TODO"
+echo '# '"$HEADING"
 echo ""
 
 # Loop over all files tracked in the repository.
 for file in $(git ls-files)
 do
-    # Skip the current file, if it is contained in the .todoignore.
+    # Skip the current file, if it is listed to be ignored.
     if [[ ! -z $(git grep "$file" "$ROOT/.srignore") ]]
     then
         continue
     fi
 
-    # Save all TODOs of the current file in todo.tmp.
-    git grep -n "TODO: " -- $ROOT/$file > "$ROOT/todo.tmp"
-    
-    # Check if there were any TODOs.
-    if [[ -s "$ROOT/todo.tmp" ]]
-    then
-        # Write the subheading for the current file.
-        echo "## [$file]($file)"
-        echo ""
+    # Extract all lines of the current file, that have one of the defined tags.
+    git grep -n -E '('"$TAGS"'): ' -- $ROOT/$file > "$ROOT/$TMP_FILE"
 
-        # Transform the TODOs from todo.tmp into the Markdown list.
-        cat "$ROOT/todo.tmp" | sed 's/'"$PATTERN"'/'"$REPLACE"'/'
-        
-        # Write a newline as a spacer for the next section.
-        echo ""
+    # Continue with the next file, if no lines where extracted.
+    if [[ ! -s "$ROOT/$TMP_FILE" ]]
+    then
+        continue
     fi
+    
+    # Write the subheading for the current file.
+    echo "## [$file]($file)"
+    echo ""
+
+    # Transform and write the raw lines in Markdown.
+    cat "$ROOT/$TMP_FILE" | sed 's/'"$SOURCE_PATTERN"'/'"$TARGET_PATTERN"'/'
+    
+    # Write a newline as a spacer for the next section.
+    echo ""
 done
 
-# Clean-up the todo.tmp file.
-rm -f "$ROOT/todo.tmp"
+# Clean-up the tmp file.
+rm -f "$ROOT/$TMP_FILE"
 
