@@ -1,6 +1,6 @@
-# Status Report
+# Issues
 
-*Generate a status report from your "TODO:" comments.*
+*Collect issue comments in one file.*
 
 ## Usage
 
