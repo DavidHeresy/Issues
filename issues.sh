@@ -28,7 +28,7 @@ echo ""
 # Loop over all files tracked in the repository.
 for file in $(git ls-files); do
     # Skip the current file, if it is listed to be ignored.
-    # TODO: Add regex formatting with $<file>^.
+    # TODO: Add regex formatting with `$<file>^`.
     if [[ ! -z $(git grep "$file" -- "$ROOT/.issuesignore") ]]; then
         continue
     fi
