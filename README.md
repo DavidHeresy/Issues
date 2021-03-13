@@ -22,7 +22,7 @@ You can also set an alias like:
 alias issues="bash issues.sh"
 ```
 
-### TODO: Setup a Git Hook
+TODO: Setup a Git Hook
 
 ## Development
 
@@ -30,6 +30,7 @@ Run `source workspace` to enter the development environment.
 
 ## Roadmap
 
+- TODO: Generate `Issues.md` with a GitHub Job.
 - TODO: Test `issues.sh` as a system-wide script / program.
 - TODO: Test `issues.sh` with big public projects.
 - FEATURE: Make `issues.sh` work for projects, that aren't a git repository.
