@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# TODO: Use more general shebang.
+# TODO: Use bash strict mode.
+
 # Define config variables.
+# FEATURE: Add support for `.issuesrc` config file.
 LABELS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA'
 HEADING="Issues"
 OUTFILE="Issues.md"
@@ -24,11 +28,13 @@ echo ""
 # Loop over all files tracked in the repository.
 for file in $(git ls-files); do
     # Skip the current file, if it is listed to be ignored.
+    # TODO: Add regex formatting with $<file>^.
     if [[ ! -z $(git grep "$file" -- "$ROOT/.issuesignore") ]]; then
         continue
     fi
 
     # Extract all lines of the current file, that have one of the defined issue labels.
+    # IDEA: Add support for `--ignore-issue` comments for lines to ignore.
     git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
 
     # Continue with the next file, if no lines where extracted.
