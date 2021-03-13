@@ -19,6 +19,6 @@
 - [ ] [TODO#L3](issues.sh#L3): Use more general shebang.
 - [ ] [TODO#L4](issues.sh#L4): Use bash strict mode.
 - [ ] [FEATURE#L7](issues.sh#L7): Add support for `.issuesrc` config file.
-- [ ] [TODO#L31](issues.sh#L31): Add regex formatting with $<file>^.
+- [ ] [TODO#L31](issues.sh#L31): Add regex formatting with `$<file>^`.
 - [ ] [IDEA#L37](issues.sh#L37): Add support for `--ignore-issue` comments for lines to ignore.
 
