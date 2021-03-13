@@ -37,7 +37,8 @@ do
     git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
 
     # Continue with the next file, if no lines where extracted.
-    if [[ ! -s "$ROOT/$TMPFILE" ]]; then
+    if [[ ! -s "$ROOT/$TMPFILE" ]]
+    then
         continue
     fi
     
