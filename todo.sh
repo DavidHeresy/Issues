@@ -29,7 +29,6 @@ do
     # Check if there were any TODOs.
     if [[ -s "$ROOT/todo.tmp" ]]
     then
-
         # Write the subheading for the current file.
         echo "## [$file]($file)"
         echo ""
