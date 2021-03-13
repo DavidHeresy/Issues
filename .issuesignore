@@ -1,4 +1,2 @@
-# IDEA: Support ignoring entire dirs with `example/`.
-# IDEA: Support whitelisting with `^<filepath>`.
 # IDEA: Support wildcards with `*`.
-
+# IDEA: Support whitelisting with `^<filepath>`.
