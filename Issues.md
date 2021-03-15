@@ -21,5 +21,4 @@
 - [ ] [IDEA#L7](issues.sh#L7): Add support for `.issuesrc` config file.
 - [ ] [IDEA#L21](issues.sh#L21): Add support for `--ignore-issue` comments for lines to ignore.
 - [ ] [TODO#L60](issues.sh#L60): Check that there are no other staged files.
-- [ ] [TODO#L61](issues.sh#L61): Verify, that no git output is added to $OUTFILE
 
