@@ -34,6 +34,7 @@ echo ""
 for file in $(git ls-files | grep -v -E -f "$ROOT/$TMPIGNOREFILE")
 do
     # Extract all lines of the current file, that have one of the defined issue labels.
+    # TODO: Grep at latest commit.
     git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
 
     # Continue with the next file, if no lines where extracted.
