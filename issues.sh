@@ -57,8 +57,6 @@ done
 rm -f "$ROOT/$TMPFILE" "$ROOT/$TMPIGNOREFILE"
 
 # Commit the update.
-# TODO: Check that there are no other staged files.
-# TODO: Verify, that no git output is added to $OUTFILE
 git add $OUTFILE
 git commit -m "Update $OUTFILE" > /dev/null 2>&1
 
