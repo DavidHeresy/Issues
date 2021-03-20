@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# TODO: Use more general shebang.
 # TODO: Use bash strict mode.
 
 # Define config variables.
