@@ -20,7 +20,7 @@ exec 1>"$ROOT/$OUTFILE"
 # Define the regex source and replace patterns.
 # IDEA: Add support for `--ignore-issue` comments for lines to ignore.
 ESCAPED_LABELS=$(echo "$LABELS" | sed 's/|/\\|/g')
-SOURCE_PATTERN='\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_LABELS"'\): \(.*\)'
+SOURCE_PATTERN='HEAD:\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_LABELS"'\): \(.*\)'
 REPLACE_PATTERN='- [ ] [\3#L\2](\1#L\2): \4'
 
 # Save .issueignore if exists.
@@ -39,9 +39,8 @@ echo ""
 # Loop over all files tracked in the repository that are not ignored.
 for file in $(git ls-files | grep -v -E -f "$ROOT/$TMPIGNOREFILE")
 do
-    # Extract all lines of the current file, that have one of the defined issue labels.
-    # TODO: Grep at latest commit.
-    git grep -n -E '('"$LABELS"'): ' -- $ROOT/$file > "$ROOT/$TMPFILE"
+    # Extract all lines of the file at HEAD, that have one of the defined issue labels.
+    git grep -n -E '('"$LABELS"'): ' "HEAD" -- "$ROOT/$file" > "$ROOT/$TMP_ISSUES" || true
 
     # Continue with the next file, if no lines where extracted.
     if [[ ! -s "$ROOT/$TMPFILE" ]]
