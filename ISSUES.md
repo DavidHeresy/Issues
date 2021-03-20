@@ -10,9 +10,8 @@
 - [ ] [`#L31`](README.md#L31) **`TODO`** Use as Git Hook
 - [ ] [`#L33`](README.md#L33) **`TODO`** Setup as Git Alias
 - [ ] [`#L41`](README.md#L41) **`TODO`** Generate `Issues.md` with a GitHub Job.
-- [ ] [`#L42`](README.md#L42) **`TODO`** Test `issues.sh` as a system-wide script / program.
-- [ ] [`#L43`](README.md#L43) **`TODO`** Test `issues.sh` with big public projects.
-- [ ] [`#L44`](README.md#L44) **`IDEA`** Make `issues.sh` work for projects, that aren't a git repository.
+- [ ] [`#L42`](README.md#L42) **`TODO`** Test `issues.sh` with big public projects.
+- [ ] [`#L43`](README.md#L43) **`IDEA`** Make `issues.sh` work for projects, that aren't a git repository.
 
 ## [issues.sh](issues.sh)
 
