@@ -16,9 +16,6 @@
 
 ## [issues.sh](issues.sh)
 
-- [ ] [TODO#L3](issues.sh#L3): Use more general shebang.
-- [ ] [TODO#L4](issues.sh#L4): Use bash strict mode.
 - [ ] [IDEA#L7](issues.sh#L7): Add support for `.issuesrc` config file.
-- [ ] [IDEA#L21](issues.sh#L21): Add support for `--ignore-issue` comments for lines to ignore.
-- [ ] [TODO#L37](issues.sh#L37): Grep at latest commit.
+- [ ] [IDEA#L24](issues.sh#L24): Add support for `--ignore-issue` comments for lines to ignore.
 
