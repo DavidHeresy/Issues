@@ -7,11 +7,12 @@
 
 ## [README.md](README.md)
 
-- [ ] [`#L31`](README.md#L31) **`TODO`** Use as Git Hook
-- [ ] [`#L33`](README.md#L33) **`TODO`** Setup as Git Alias
-- [ ] [`#L41`](README.md#L41) **`TODO`** Generate `Issues.md` with a GitHub Job.
-- [ ] [`#L42`](README.md#L42) **`TODO`** Test `issues.sh` with big public projects.
-- [ ] [`#L43`](README.md#L43) **`IDEA`** Make `issues.sh` work for projects, that aren't a git repository.
+- [ ] [`#L33`](README.md#L33) **`TODO`** Use as Git Hook
+- [ ] [`#L34`](README.md#L34) **`TODO`** Setup as Git Alias
+- [ ] [`#L35`](README.md#L35) **`TODO`** Explain use of `git grep` at `HEAD`.
+- [ ] [`#L43`](README.md#L43) **`TODO`** Generate `Issues.md` with a GitHub Job.
+- [ ] [`#L44`](README.md#L44) **`TODO`** Test `issues.sh` with big public projects.
+- [ ] [`#L45`](README.md#L45) **`IDEA`** Make `issues.sh` work for projects, that aren't a git repository.
 
 ## [issues.sh](issues.sh)
 
