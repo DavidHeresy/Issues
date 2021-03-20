@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# TODO: Use bash strict mode.
+# Use bash strict mode.
+set -Eeuo pipefail
 
 # Define config variables.
 # IDEA: Add support for `.issuesrc` config file.
