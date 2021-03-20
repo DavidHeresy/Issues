@@ -10,7 +10,7 @@ Copy the script [`issues.sh`](issues.sh) to your git repository, for example via
 wget https://raw.githubusercontent.com/DavidHeresy/git-issues/main/issues.sh
 ```
 
-Generate the [Issues.md](Issues.md) file with:
+Generate the [ISSUES.md](ISSUES.md) file with:
 
 ```bash
 bash issues.sh
