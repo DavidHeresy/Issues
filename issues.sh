@@ -74,6 +74,6 @@ done
 rm -f "$ROOT/$TMP_ISSUES" "$ROOT/$TMP_IGNORE" "$ROOT/$TMP_FILES"
 
 # Commit the update.
-git add $OUTFILE
+git add "$ROOT/$OUTFILE"
 git commit -m "Update $OUTFILE" > /dev/null 2>&1
 
