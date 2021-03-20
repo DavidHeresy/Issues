@@ -7,8 +7,8 @@ set -Eeuo pipefail
 # IDEA: Add support for `.issuesrc` config file.
 LABELS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA'
 HEADING="Issues"
-OUTFILE="Issues.md"
-TMPFILE="issues.tmp"
+OUTFILE="ISSUES.md"
+TMPFILE=".issues.tmp"
 TMPIGNOREFILE=".issuesignore.tmp"
 
 # Get the root path of the repository.
