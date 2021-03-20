@@ -28,9 +28,11 @@ You can specify which files to ignore in the [.issuesignore](.issuesignore) file
 Is supports comments starting with `#` and 
 [POSIX extended regex patterns](https://en.wikipedia.org/wiki/Regular_expression#POSIX_extended).
 
-### TODO: Use as Git Hook
+### Other
 
-### TODO: Setup as Git Alias
+- TODO: Use as Git Hook
+- TODO: Setup as Git Alias
+- TODO: Explain use of `git grep` at `HEAD`.
 
 ## Development
 
