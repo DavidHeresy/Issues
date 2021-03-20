@@ -23,8 +23,14 @@ ESCAPED_LABELS=$(echo "$LABELS" | sed 's/|/\\|/g')
 SOURCE_PATTERN='\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_LABELS"'\): \(.*\)'
 REPLACE_PATTERN='- [ ] [\3#L\2](\1#L\2): \4'
 
-# Remove comments from the .issueignore file and save it in a tmp file. 
-grep "^[^#]" "$ROOT/.issuesignore" > "$ROOT/$TMPIGNOREFILE"
+# Save .issueignore if exists.
+if [[ -f "$ROOT/.issuesignore" ]]
+then
+    # Remove comments from the .issueignore file and save it in a tmp file. 
+    grep "^[^#]" "$ROOT/.issuesignore" > "$ROOT/$TMPIGNOREFILE"
+else
+    echo "" > "$ROOT/$TMPIGNOREFILE"
+fi
 
 # Write the heading.
 echo '# '"$HEADING"
