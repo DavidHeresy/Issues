@@ -51,7 +51,9 @@ echo ""
 for file in $(cat "$ROOT/$TMP_FILES")
 do
     # Extract all lines of the file at HEAD, that have one of the defined issue labels.
-    git grep -n -E '('"$LABELS"'): ' "HEAD" -- "$ROOT/$file" > "$ROOT/$TMP_ISSUES" || true
+    git grep -n -E '('"$LABELS"'): ' "HEAD" -- "$ROOT/$file" \
+        > "$ROOT/$TMP_ISSUES" \
+        || true
 
     # Continue with the next file, if no lines where extracted.
     if [[ ! -s "$ROOT/$TMP_ISSUES" ]]
