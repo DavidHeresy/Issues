@@ -1,4 +1,4 @@
-# Git Issues
+# Issues
 
 *Collect all issue comments (e.g. `TODO`, `FIXME`, ...) in one file.*
 
