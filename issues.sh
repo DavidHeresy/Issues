@@ -24,7 +24,7 @@ exec 1>"$ROOT/$OUTFILE"
 # IDEA: Add support for `--ignore-issue` comments for lines to ignore.
 ESCAPED_LABELS=$(echo "$LABELS" | sed 's/|/\\|/g')
 SOURCE_PATTERN='HEAD:\([^:]*\):\([0-9]*\):.*\('"$ESCAPED_LABELS"'\): \(.*\)'
-REPLACE_PATTERN='- [ ] [\3#L\2](\1#L\2): \4'
+REPLACE_PATTERN='- [ ] [`#L\2`](\1#L\2) **`\3`** \4'
 
 # Save .issueignore if exists.
 if [[ -f "$ROOT/.issuesignore" ]]
