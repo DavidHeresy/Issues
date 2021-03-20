@@ -5,7 +5,7 @@ set -Eeuo pipefail
 
 # Define config variables.
 # IDEA: Add support for `.issuesrc` config file.
-LABELS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA'
+LABELS='TODO|FIXME|BUG|NOTE|XXX|HACK|FEATURE|IDEA|WISH'
 HEADING="Issues"
 OUTFILE="ISSUES.md"
 TMPFILE=".issues.tmp"
