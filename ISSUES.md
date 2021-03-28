@@ -10,9 +10,10 @@
 - [ ] [`#L33`](README.md#L33) **`TODO`** Use as Git Hook
 - [ ] [`#L34`](README.md#L34) **`TODO`** Setup as Git Alias
 - [ ] [`#L35`](README.md#L35) **`TODO`** Explain use of `git grep` at `HEAD`.
-- [ ] [`#L43`](README.md#L43) **`TODO`** Generate `Issues.md` with a GitHub Job.
-- [ ] [`#L44`](README.md#L44) **`TODO`** Test `issues.sh` with big public projects.
-- [ ] [`#L45`](README.md#L45) **`IDEA`** Make `issues.sh` work for projects, that aren't a git repository.
+- [ ] [`#L43`](README.md#L43) **`TODO`** Generate `ISSUES.md` with a remote git hook.
+- [ ] [`#L44`](README.md#L44) **`TODO`** Make `issues.sh` work for projects, that aren't a git repository.
+- [ ] [`#L45`](README.md#L45) **`IDEA`** Aggregate issues in JSON format and only project to Markdown. (Use jq for that.)
+- [ ] [`#L46`](README.md#L46) **`IDEA`** Project issues in todo.txt format.
 
 ## [issues.sh](issues.sh)
 
