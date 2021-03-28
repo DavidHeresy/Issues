@@ -40,7 +40,8 @@ Run `source workspace` to enter the development environment.
 
 ## Roadmap
 
-- TODO: Generate `Issues.md` with a GitHub Job.
-- TODO: Test `issues.sh` with big public projects.
-- IDEA: Make `issues.sh` work for projects, that aren't a git repository.
+- TODO: Generate `ISSUES.md` with a remote git hook.
+- TODO: Make `issues.sh` work for projects, that aren't a git repository.
+- IDEA: Aggregate issues in JSON format and only project to Markdown. (Use jq for that.)
+- IDEA: Project issues in todo.txt format.
 
